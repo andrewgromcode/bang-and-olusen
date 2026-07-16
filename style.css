@@ -73,9 +73,53 @@ img { display: block; max-width: 100%; }
 
 .icon-btn img { width: 100%; height: 100%; }
 
+.icon-btn--phone {
+  text-decoration: none;
+  width: auto;
+  gap: 8px;
+}
+
+.icon-btn--phone img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.icon-btn__label {
+  display: inline-block;
+  font-family: 'Inter', var(--font);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: var(--color-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width .25s ease, opacity .2s ease;
+}
+
+@media (min-width: 1024px) {
+  .icon-btn--phone:hover .icon-btn__label,
+  .icon-btn--phone:focus-visible .icon-btn__label {
+    max-width: 220px;
+    opacity: 1;
+  }
+}
+
 .icon-close { display: none; }
-.menu-toggle.is-open .icon-burger { display: none; }
+.icon-burger-hover { display: none; }
+
+.menu-toggle:not(.is-open):hover .icon-burger { display: none; }
+.menu-toggle:not(.is-open):hover .icon-burger-hover { display: block; }
+
+.menu-toggle.is-open .icon-burger,
+.menu-toggle.is-open .icon-burger-hover { display: none; }
 .menu-toggle.is-open .icon-close { display: block; }
+
+.header.menu-open .header__actions .icon-btn:not(.menu-toggle) { display: none; }
 
 /* ---------- Mobile menu ---------- */
 
@@ -382,6 +426,8 @@ img { display: block; max-width: 100%; }
   .header__inner { padding-top: 32px; padding-bottom: 32px; }
   .logo img { height: 24px; }
   .icon-btn { width: 32px; height: 32px; }
+  .icon-btn--phone { width: auto; }
+  .icon-btn--phone img { width: 32px; height: 32px; }
   .header__actions { gap: 32px; }
 
   .hero { min-height: 720px; padding-bottom: 64px; }
