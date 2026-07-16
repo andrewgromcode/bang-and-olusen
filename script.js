@@ -3,8 +3,12 @@ const mobileMenu = document.getElementById('mobileMenu');
 
 menuToggle.addEventListener('click', () => {
   mobileMenu.classList.toggle('is-open');
+  menuToggle.classList.toggle('is-open');
 });
 
 mobileMenu.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('is-open');
+    menuToggle.classList.remove('is-open');
+  });
 });
