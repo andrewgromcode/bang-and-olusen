@@ -396,8 +396,8 @@ img { display: block; max-width: 100%; }
   .icon-btn { width: 32px; height: 32px; }
   .header__actions { gap: 32px; }
 
-  .mobile-menu { display: none; }
-  .menu-toggle { display: none; }
+/*   .mobile-menu { display: none; }
+  .menu-toggle { display: none; } */
 
   .hero { min-height: 720px; padding-bottom: 64px; }
   .hero__title { font-size: 56px; }
