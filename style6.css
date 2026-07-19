@@ -495,9 +495,8 @@ img { display: block; max-width: 100%; }
     grid-template-columns: 498fr 411fr;
     column-gap: 10.8824%;
     align-items: start;
-    /* max-width и margin теперь наследуются от .container (1260px, по центру) —
-       выше этой ширины контент не растягивается, только фон .timeless__media
-       остаётся full-bleed, т.к. у него отдельный элемент вне .container */
+    max-width: none;
+    margin: 0;
   }
   .timeless__title { margin-bottom: 0; }
   .timeless__text { }

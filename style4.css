@@ -359,7 +359,7 @@ img { display: block; max-width: 100%; }
 
 .timeless__media {
   width: 100%;
-  aspect-ratio: 8 / 5; /* 320×200 согласно Figma-кадру 320 */
+  aspect-ratio: 4 / 3;
 }
 
 .timeless__media img {
@@ -450,13 +450,11 @@ img { display: block; max-width: 100%; }
   .timeless__media { aspect-ratio: 744 / 400; }
   .timeless__media img { object-position: center 70%; }
   .timeless {
-    display: grid;
-    grid-template-columns: 287fr 288fr;
-    column-gap: 4%;
-    align-items: start;
+    display: flex;
+    gap: 24px;
   }
-  .timeless__title { margin-bottom: 0; }
-  .timeless__text { }
+  .timeless__title { margin-bottom: 0; flex: 0 0 287px; }
+  .timeless__text { flex: 0 0 288px; }
 }
 
 /* =====================================================
@@ -492,21 +490,18 @@ img { display: block; max-width: 100%; }
   .timeless__band { padding: 120px 0; }
   .timeless {
     display: grid;
-    grid-template-columns: 498fr 411fr;
-    column-gap: 10.8824%;
+    grid-template-columns: 498px 1fr;
+    gap: 24px;
     align-items: start;
-    /* max-width и margin теперь наследуются от .container (1260px, по центру) —
-       выше этой ширины контент не растягивается, только фон .timeless__media
-       остаётся full-bleed, т.к. у него отдельный элемент вне .container */
+    max-width: none;
+    margin: 0;
   }
   .timeless__title { margin-bottom: 0; }
-  .timeless__text { }
+  .timeless__text { max-width: 411px; margin-left: auto; }
 
-  .contact__grid {
-    display: grid;
-    grid-template-columns: 498fr 411fr;
-    column-gap: 10.8824%;
-  }
+  .contact__grid { flex-direction: row; gap: 111px; }
+  .contact-form { flex: 1 1 60%; }
+  .contact-info { flex: 1 1 40%; }
   .contact-form { max-width: 498px; margin: 0; }
   .contact-info { max-width: 411px; }
 }
