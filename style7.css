@@ -113,13 +113,8 @@ img { display: block; max-width: 100%; }
 .icon-close { display: none; }
 .icon-burger-hover { display: none; }
 
-/* Только для устройств с реальным hover (мышь/трекпад).
-   На тач-экранах :hover "залипает" после тапа (нет события mouseleave),
-   из-за чего бургер оставался в hover-варианте иконки после закрытия меню. */
-@media (hover: hover) and (pointer: fine) {
-  .menu-toggle:not(.is-open):hover .icon-burger { display: none; }
-  .menu-toggle:not(.is-open):hover .icon-burger-hover { display: block; }
-}
+.menu-toggle:not(.is-open):hover .icon-burger { display: none; }
+.menu-toggle:not(.is-open):hover .icon-burger-hover { display: block; }
 
 .menu-toggle.is-open .icon-burger,
 .menu-toggle.is-open .icon-burger-hover { display: none; }
@@ -164,10 +159,8 @@ img { display: block; max-width: 100%; }
   transition: border-color .2s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .mobile-menu__list a:hover {
-    border-bottom-color: var(--color-dark);
-  }
+.mobile-menu__list a:hover {
+  border-bottom-color: var(--color-dark);
 }
 
 .mobile-menu__cta {
@@ -260,9 +253,7 @@ img { display: block; max-width: 100%; }
   transition: opacity .2s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .btn:hover { opacity: .85; }
-}
+.btn:hover { opacity: .85; }
 
 .btn--primary { background: var(--color-orange); width: 100%; }
 
